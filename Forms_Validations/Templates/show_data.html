@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ "Show Data" }}{% endblock %}
+{% block body_block %}
+  <div style='width: 10%;height: auto;margin: 15px;padding: 15;background-color: #f1f1f1;position: fixed;overflow: auto;' class="sidebar">
+    {% comment %} <a style='width: 100%;height: auto;position: relative;float: left;' class="active" href="#home">Home</a>
+    <a style='width: 100%;height: auto;position: relative;float: left;' href="#news">News</a>
+    <a style='width: 100%;height: auto;position: relative;float: left;' href="#contact">Contact</a>
+    <a style='width: 100%;height: auto;position: relative;float: left;' href="#about">About</a> {% endcomment %}
+    <a style='width: 100%;height: auto;position: relative;float: left;' href="#">
+      <div class="dropdown">
+        {% comment %} <button class="btn btn-primary dropdown-toggle">Apply Filter</button> {% endcomment %}
+        <h4>Apply Filter</h4>
+          <div class="dropdown-content">
+            <a style='width: 100%;height: auto;position: relative;float: left;' href="#">Filter 1</a>
+            <a style='width: 100%;height: auto;position: relative;float: left;' href="#">Filter 2</a>
+            <a style='width: 100%;height: auto;position: relative;float: left;' href="#">Filter 3</a>
+            <a style='width: 100%;height: auto;position: relative;float: left;' href="#">Filter 4</a>
+            <a style='width: 100%;height: auto;position: relative;float: left;' href="#">Filter 5</a>
+          </div>
+      </div>
+    </a>
+  </div>
+    <h1 style="text-align:center;">Data Fetched..!!</h1>
+    <div class="container" align="center">
+        <form>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone No</th>
+                    <th scope="col">Feedback</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% load cust_filter %}
+                    {% for data in all_data %}
+                    <tr>
+                        <th scope="row">{{ data.id }}</th>
+                        {% comment %} <td>{{ data.name | c5 }}</td> {% endcomment %}
+                        <td>{{ data.name | cn:5 }}</td>
+
+                        <td>{{ data.Phn_no  }}</td>
+                        <td>{{ data.feedback |upper }}</td>
+                    </tr>
+                    {% endfor %}
+                 
+                </tbody>
+              </table>
+        </form>
+    </div>
+{% endblock %}
+

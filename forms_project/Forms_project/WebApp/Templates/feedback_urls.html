@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Forms..!!</title>
+    <link rel="stylesheet" href="Copy Bootstrap CDN Link">
+    <link href="{% static 'css/feedback_urls.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>Feedback Form..!!</h1>
+<div class="container" align="center">
+<form method="post">
+{{ form.as_p }}
+<input type="submit" value="Feedback" class="btn btn-success">
+</form>
+</div>
+</body>
+</html>
