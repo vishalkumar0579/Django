@@ -1,15 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}{{ "Show Data" }}{% endblock %}
+{% load static %}
 {% block body_block %}
   <div style='width: 10%;height: auto;margin: 15px;padding: 15;background-color: #f1f1f1;position: fixed;overflow: auto;' class="sidebar">
-    {% comment %} <a style='width: 100%;height: auto;position: relative;float: left;' class="active" href="#home">Home</a>
-    <a style='width: 100%;height: auto;position: relative;float: left;' href="#news">News</a>
-    <a style='width: 100%;height: auto;position: relative;float: left;' href="#contact">Contact</a>
-    <a style='width: 100%;height: auto;position: relative;float: left;' href="#about">About</a> {% endcomment %}
     <a style='width: 100%;height: auto;position: relative;float: left;' href="#">
       <div class="dropdown">
-        {% comment %} <button class="btn btn-primary dropdown-toggle">Apply Filter</button> {% endcomment %}
         <h4>Apply Filter</h4>
           <div class="dropdown-content">
             <a style='width: 100%;height: auto;position: relative;float: left;' href="#">Filter 1</a>
