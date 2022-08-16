@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ "Feedback" }}{% endblock %}
+
+{% block body_block %}
+    <h1 style="text-align:center;">Django Auth..!!</h1>
+    <div class="container" align="center">
+        <h1 style="text-align:center;">Check auth..!!</h1>
+        <div class="container" align="center">
+            <form method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" value="Feedback" class="btn btn-success">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
