@@ -126,7 +126,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_FILESDIR =[STATIC_DIR]
-
+LOGIN_REDIRECT_URL = '/' # it will redirect to home page if you click in signin button
+LOGOUT_REDIRECT_URL = '/logout' # it will redirect to home page if you click in signout button
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
